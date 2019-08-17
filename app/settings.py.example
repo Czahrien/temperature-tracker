@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_extensions',
     'rest_framework',
-    'data'
+    'data',
+    'data_alerts'
 ]
 
 MIDDLEWARE = [
@@ -127,3 +128,9 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'soandso@gmail.com'
 EMAIL_HOST_PASSWORD = 'setup an app password'
 DEFAULT_FROM_EMAIL = 'soandso@gmail.com'
+
+BROKER_URL = 'redis://localhost:6379'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
